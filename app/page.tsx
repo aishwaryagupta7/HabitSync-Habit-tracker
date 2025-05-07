@@ -1,6 +1,6 @@
 "use client";
 import { PlusCircle, User, Moon, Droplet, Monitor, CircleHelp,Calendar, Clock, Bell, Menu } from 'lucide-react';
-import { ReactNode, useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -786,7 +786,7 @@ export default function Home() {
       <HabitTrackerNavbar />
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-5 py-3 text-lg gap-2">
         <div>
-          <p>Hi Aishwarya,</p>
+          <p className='text-black'>Hi Aishwarya,</p>
           <p className="text-base text-gray-600">Keep track of your daily goals!</p>
         </div>
         <div className="w-full sm:w-auto mt-2 sm:mt-0">
@@ -799,8 +799,8 @@ export default function Home() {
             {/* Personal Stats */}
             <div className="bg-[#FDF5FF]/50 backdrop-blur-lg rounded-xl px-5 py-4">
               <div className='flex items-center justify-between mb-2'>
-                <h3 className="font-semibold text-lg ">Personal Stats</h3>
-                <FormButton label="Daily Check-In" onClick={handleCheckInClick} className=" border-2 border-[#83A2DB] shadow-sm p-2 cursor-pointer" />
+                <h3 className="font-semibold text-lg text-black">Personal Stats</h3>
+                <FormButton label="Daily Check-In" onClick={handleCheckInClick} className=" border-2 border-[#83A2DB] shadow-sm p-2 cursor-pointer text-black" />
                 
               </div>
 
@@ -817,7 +817,7 @@ export default function Home() {
                     <select
                       value={selectedMetric}
                       onChange={(e) => setSelectedMetric(e.target.value as 'sleep' | 'water' | 'screenTime')}
-                      className="bg-[#F2F2F2] rounded-lg p-2  w-full"
+                      className="bg-[#F2F2F2] rounded-lg p-2  w-full text-black"
                     >
                       <option value="sleep">Sleep</option>
                       <option value="water">Water Intake</option>
@@ -843,7 +843,7 @@ export default function Home() {
 
             {/* Your Goals */}
             <div className="bg-[#FDF5FF]/50 backdrop-blur-lg rounded-xl p-4  flex flex-col ">
-              <h3 className="font-semibold text-lg mb-2">Your Goals</h3>
+              <h3 className="font-semibold text-lg mb-2 text-black">Your Goals</h3>
               <div className='flex-1 overflow-y-auto min-h-[16vh] max-h-[16vh] flex flex-col gap-3 custom-scrollbar pr-2'>
                 <GoalList goals={goals} onComplete={handleCompleteGoal}  onEdit={handleEditGoal} onDelete={handleDeleteGoal} />
               </div>
@@ -853,22 +853,20 @@ export default function Home() {
           <div className=" col-span-2 flex flex-col gap-2">
             {/* Set Goals Form */}
             <div className="bg-[#FDF5FF]/40 backdrop-blur-lg rounded-xl p-4">
-              <h3 className="font-semibold text-lg mb-2">Set Your Goals</h3>
+              <h3 className="font-semibold text-lg mb-2 text-black">Set Your Goals</h3>
               <FormInput  label="Title" name="goalTitle" placeholder="Enter your goal title" value={formData.goalTitle} onChange={handleInputChange} disabled={isGoalFormDisabled}/>
               <FormInput  label="Description" name="goalDescription" placeholder="Enter your goal description" value={formData.goalDescription} onChange={handleInputChange} textarea={true} disabled={isGoalFormDisabled} />
               <div className='flex items-center justify-between'>
                 <DateTimeSelector value={formData.deadline} onChange={handleDeadlineChange} />
-                <FormButton  label={editingGoalId ? "Update Goal" : "Create Goal"} onClick={handleCreateOrUpdateGoal} className={`bg-[#83A2DB] mt-6 cursor-pointer ${isGoalFormDisabled ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isGoalFormDisabled} />
+                <FormButton  label={editingGoalId ? "Update Goal" : "Create Goal"} onClick={handleCreateOrUpdateGoal} className={`bg-[#83A2DB] mt-6 cursor-pointer text-black ${isGoalFormDisabled ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isGoalFormDisabled} />
               </div>
             </div>
             
             {/* Streak Tracker */}
             <div className="bg-[#FDF5FF]/40 backdrop-blur-lg rounded-xl p-4">
-              <h3 className="font-semibold text-lg mb-2">Streak Tracker</h3>
+              <h3 className="font-semibold text-lg mb-2 text-black">Streak Tracker</h3>
               <StreakTracker />
             </div>
-
-            {/* Reminder Box */}
           </div>
         </div>
       </div>
@@ -876,7 +874,7 @@ export default function Home() {
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="bg-gradient-to-b from-[#D9DCDB] to-[#83A2DB] p-6 rounded-lg w-full max-w-md shadow-lg relative">
-            <h2 className="text-xl font-semibold mb-4">Daily Check-In</h2>
+            <h2 className="text-xl font-semibold mb-4 text-black">Daily Check-In</h2>
             <SliderComponent
               onSleepChange={setSleepHours}
               onWaterChange={setWaterIntake}
