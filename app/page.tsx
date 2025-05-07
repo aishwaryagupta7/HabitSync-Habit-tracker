@@ -257,7 +257,7 @@ const DaySelector = ({
 const StatCard = ({stat}:{stat:StatProps}) => {
   const icon = iconMap[stat.type] ?? <CircleHelp className="text-gray-400" />;
   return (
-    <div className="flex items-center py-2 px-3 bg-transparent rounded-xl border border-2 border-[#c3c2c2] w-full md:w-1/3 lg:w-1/3 ">
+    <div className="flex items-center py-2 px-3 bg-transparent rounded-xl border-2 border-[#c3c2c2] w-full md:w-1/3 lg:w-1/3 ">
       <div className=" bg-[#6193ED] p-2 rounded-sm ">{icon}</div>
       <div className="ml-4">
         <h3 className="text-lg font-semibold text-[#7D7D7D] whitespace-nowrap">{stat.type}</h3>
@@ -717,7 +717,7 @@ export default function Home() {
     setFormData({ goalTitle: "", goalDescription: "", deadline: "" });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -806,7 +806,7 @@ export default function Home() {
             <div className="bg-[#FDF5FF]/50 backdrop-blur-lg rounded-xl px-5 py-4">
               <div className='flex items-center justify-between mb-2'>
                 <h3 className="font-semibold text-lg ">Personal Stats</h3>
-                <FormButton label="Daily Check-In" onClick={handleCheckInClick} className="border border-2 border-[#83A2DB] shadow-sm p-2 cursor-pointer" />
+                <FormButton label="Daily Check-In" onClick={handleCheckInClick} className=" border-2 border-[#83A2DB] shadow-sm p-2 cursor-pointer" />
                 
               </div>
 
