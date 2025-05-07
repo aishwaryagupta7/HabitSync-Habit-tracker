@@ -1,16 +1,11 @@
 "use client";
-import { BarChart2, Target, PlusCircle, User, Moon, Droplet, Monitor, CircleHelp,Calendar, Clock, Bell, Menu } from 'lucide-react';
+import { PlusCircle, User, Moon, Droplet, Monitor, CircleHelp,Calendar, Clock, Bell, Menu } from 'lucide-react';
 import { ReactNode, useState, useRef, useEffect } from 'react';
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { format, subDays, isSameDay, parseISO } from 'date-fns';
 
-interface NavItemProps {
-  icon: ReactNode;
-  label: string;
-  active?: boolean;
-};
-type FormInputProps = {
+// interfaces
+interface FormInputProps  {
   label: string;
   name: string;
   placeholder?: string;
@@ -22,7 +17,7 @@ type FormInputProps = {
   textarea?: boolean;
   disabled?: boolean;
 };
-type StatProps= {
+interface StatProps {
   type: string;
   value: number | string;
   unit?: string;
@@ -32,16 +27,16 @@ const iconMap: Record<string, React.ReactNode> = {
   Water: <Droplet className="w-10 h-10 fill-current text-white" />,
   'Screen Time': <Monitor className="w-10 h-10 fill-current text-white" />,
 };
-type DateTimeSelectorProps = {
+interface DateTimeSelectorProps  {
   value: string; // format: "YYYY-MM-DD HH:mm"
   onChange: (value: string) => void;
 };
-type StreakBubbleProps = {
+interface StreakBubbleProps {
   value: number;
   label: string;
   bgColor: string;
 };
-type DayBoxProps = {
+interface DayBoxProps  {
   day: number;
   completed: boolean;
   highlighted?: boolean;
@@ -145,7 +140,6 @@ const dummyDataByDay: Record<AvailableDay, {
     ]
   }
 };
-
 
 
 function HabitTrackerNavbar() {
