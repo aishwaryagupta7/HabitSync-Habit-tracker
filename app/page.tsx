@@ -812,7 +812,7 @@ export default function Home() {
               {/* Weekly Report */}
               <div>
                 <div className='flex items-center justify-between mb-2'>
-                  <h3 className="font-semibold text-lg mb-2">Weekly Report</h3>
+                  <h3 className="font-semibold text-lg mb-2 text-black">Weekly Report</h3>
                   <div className="mb-4">
                     <select
                       value={selectedMetric}
@@ -884,12 +884,12 @@ export default function Home() {
               <FormButton
                 label="Cancel"
                 onClick={() => setIsModalOpen(false)}
-                className="bg-gray-200 hover:bg-gray-300"
+                className="bg-gray-200 hover:bg-gray-300 text-black"
               />
               <FormButton
                 label="Save Progress"
                 onClick={handleCheckInSubmit}
-                className="bg-[#465775]  hover:bg-[#6f91c8]"
+                className="bg-[#465775]  hover:bg-[#6f91c8] text-black"
               />
             </div>
           </div>
