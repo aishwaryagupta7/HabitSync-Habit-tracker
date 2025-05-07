@@ -441,13 +441,13 @@ const StreakTracker = () => {
   const bestStreak = 21;
 
   const recentDays = [
-    { day: 27, completed: true },
-    { day: 28, completed: true },
-    { day: 29, completed: true },
-    { day: 30, completed: true },
     { day: 1, completed: true },
     { day: 2, completed: true },
-    { day: 3, completed: false, highlighted: true },
+    { day: 3, completed: true },
+    { day: 4, completed: true },
+    { day: 5, completed: true },
+    { day: 6, completed: true },
+    { day: 7, completed: false, highlighted: true },
   ];
 
   return (
